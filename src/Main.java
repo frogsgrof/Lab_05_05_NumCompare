@@ -29,9 +29,12 @@ public class Main {
             for index = 1 to input1.length() step 1
                 if input1.charAt(index - 1) != some value between 0-9 then
                     input1IsValid = false
-                    output "Error: number not recognized."
                 endIf
             endFor
+
+            if NOT input1IsValid then
+                output "Error: number not recognized."
+            endIf
 
         while input1IsValid == false
 
@@ -43,9 +46,12 @@ public class Main {
             for index = 1 to input2.length() step 1
                 if input2.charAt(index - 1) != some value between 0-9 then
                     input2IsValid = false
-                    output "Error: number not recognized."
                 endIf
             endFor
+
+            if NOT input2IsValid then
+                output "Error: number not recognized."
+            endIf
 
         while input2IsValid == false
 
@@ -83,23 +89,28 @@ public class Main {
             System.out.println("[Imagine user input]");
             input1 = "asdljfljlk"; // pretend user input
             System.out.println("You entered: " + input1);
-            // end test code:
+            // end test code.
 
             // loops over the length of input1
             for (int i = 1;  i < input1.length() ; i++){
                 // For each character in input1, it checks if it is not a value 0-9. if it is not a value
                 if (!(input1.charAt(i - 1) == 0 ||     // 0-9, then it sets input1IsValid to false,
                         input1.charAt(i - 1) == 1 ||   // and then prints an error message.
-                        input1.charAt(i - 1) == 2 ||   // At the end of the do...while loop, if
-                        input1.charAt(i - 1) == 3 ||   // input1IsValid is false, then that triggers the loop.
-                        input1.charAt(i - 1) == 4 ||
+                        input1.charAt(i - 1) == 2 ||
+                        input1.charAt(i - 1) == 3 ||   // At the end of the do...while loop, if
+                        input1.charAt(i - 1) == 4 ||   // input1IsValid is false, then that triggers the loop.
                         input1.charAt(i - 1) == 5 ||
                         input1.charAt(i - 1) == 6 ||
                         input1.charAt(i - 1) == 7 ||
                         input1.charAt(i - 1) == 8 ||
                         input1.charAt(i - 1) == 9)) {
 
+                    // input1 is determined invalid as soon as a character comes up that is not a value 0-9.
                     input1IsValid = false;
+
+                    // If it finds a character that is not a value 0-9, there is no need to keep checking.
+                    break;
+
                 } // end if inside for
             } // end for
 
@@ -108,17 +119,51 @@ public class Main {
             if (!input1IsValid) {
                 System.out.println("ERROR: unrecognized integer. Try again.");
                 input1 = "4"; // THIS IS TO PREVENT AN INFINITE LOOP DURING TESTING
+                System.out.println("[input1 was set to '4']");
             }
 
-        } while (!input1IsValid); // end do...while (input1)
+        } while (!input1IsValid);
+        // end input 1 loop
 
-        // Now the exact same test happens for input2, without the opening message:
+        // Now the exact same test happens for input2 (except the opening message):
         do {
             System.out.println("Enter your second number:");
+            // test code:
+            System.out.println("[Imagine user input]");
             input2 = "4";
             System.out.println("You entered: " + input2);
+            // end test code.
 
-        }  while (!input2IsValid); // end do...while (input2)
+            // loops over the length of input2:
+            for (int i = 1 ; i < input2.length() ; i++) {
+                if (!(input2.charAt(i - 1) == 0 ||
+                        input2.charAt(i - 1) == 1 ||
+                        input2.charAt(i - 1) == 2 ||
+                        input2.charAt(i - 1) == 3 ||
+                        input2.charAt(i - 1) == 4 ||
+                        input2.charAt(i - 1) == 5 ||
+                        input2.charAt(i - 1) == 6 ||
+                        input2.charAt(i - 1) == 7 ||
+                        input2.charAt(i - 1) == 8 ||
+                        input2.charAt(i - 1) == 9)) {
+
+                    input2IsValid = false;
+                    break;
+
+                } // end if inside for
+            } // end for
+
+            // final check + error message:
+            if (!input2IsValid) {
+                System.out.println("ERROR: unrecognized integer. Try again.");
+                input2 = "4"; // THIS IS TO PREVENT AN INFINITE LOOP DURING TESTING
+                System.out.println("[input2 was set to '4']");
+            }
+
+        }  while (!input2IsValid);
+        // end input2 loop
+
+        // at this point, both input1 and input2 should be verified integers
 
         // converts the inputs from Strings into integers and stores them in num1 and num2
         num1 = Integer.parseInt(input1);
@@ -128,19 +173,13 @@ public class Main {
         if (num1 == num2) {
             System.out.println("Result: " + num1 + " is equal to " + num2 + ".");
         } else if (num1 > num2) {
-
+            System.out.println("Result: " + num1 + " is less than " + num2 + ".");
         } else {
-
+            System.out.println("Result: " + num1 + " is greater than " + num2 + ".");
         }
 
-        //testing for myself: DELETE LATER
-        /*
-        The contains() method checks whether a string contains a sequence of characters.
-        Returns true if the characters exist and false if not.
 
-        String test = "4";
-        System.out.println(test.contains());
-         */
+    } // end main
 
-    }
-}
+
+} // end class
