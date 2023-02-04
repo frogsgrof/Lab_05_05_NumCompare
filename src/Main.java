@@ -73,8 +73,8 @@ public class Main {
         String input1; // I use some string methods, so the inputs are stored as Strings
         String input2;
 
-        boolean input1IsValid = true; // default value for their validity is true
-        boolean input2IsValid = true;
+        boolean input1IsValid;
+        boolean input2IsValid;
 
         int num1; // stores inputs after they have been converted to ints
         int num2;
@@ -82,12 +82,14 @@ public class Main {
         // asks for input1 and checks if it's an integer. if not, repeats. once it comes up with a valid input1,
         // it does the same for input2.
         do {
+            input1IsValid = true; // reset to true at the beginning to prevent infinite loops during testing
+
             System.out.println("Enter two integers to compare them.\n" +
                     "Enter your first number:");
 
             // start test code:
             System.out.println("[Imagine user input]");
-            input1 = "asdljfljlk"; // pretend user input
+            input1 = "4"; // pretend user input
             System.out.println("You entered: " + input1);
             // end test code.
 
@@ -114,7 +116,7 @@ public class Main {
                 } // end if inside for
             } // end for
 
-            // outside of the for loop, it does a final check if input1 is not an integer.
+            // once outside the for loop, it does a final check if input1 is not an integer.
             // if not, it prints an error message.
             if (!input1IsValid) {
                 System.out.println("ERROR: unrecognized integer. Try again.");
@@ -127,6 +129,8 @@ public class Main {
 
         // Now the exact same test happens for input2 (except the opening message):
         do {
+            input2IsValid = true; // once again to prevent infinite loops during testing
+
             System.out.println("Enter your second number:");
             // test code:
             System.out.println("[Imagine user input]");
