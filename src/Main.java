@@ -95,16 +95,16 @@ public class Main {
             // loops over the length of input1
             for (int i = 1;  i < input1.length() ; i++){
                 // For each character in input1, it checks if it is not a value 0-9. if it is not a value
-                if (!(input1.charAt(i - 1) == 0 ||     // 0-9, then it sets input1IsValid to false,
-                        input1.charAt(i - 1) == 1 ||   // and then prints an error message.
-                        input1.charAt(i - 1) == 2 ||
-                        input1.charAt(i - 1) == 3 ||   // At the end of the do...while loop, if
-                        input1.charAt(i - 1) == 4 ||   // input1IsValid is false, then that triggers the loop.
-                        input1.charAt(i - 1) == 5 ||
-                        input1.charAt(i - 1) == 6 ||
-                        input1.charAt(i - 1) == 7 ||
-                        input1.charAt(i - 1) == 8 ||
-                        input1.charAt(i - 1) == 9)) {
+                if (!(input1.charAt(i - 1) == '0' ||     // 0-9, then it sets input1IsValid to false,
+                        input1.charAt(i - 1) == '1' ||   // and then prints an error message.
+                        input1.charAt(i - 1) == '2' ||
+                        input1.charAt(i - 1) == '3' ||   // At the end of the do...while loop, if
+                        input1.charAt(i - 1) == '4' ||   // input1IsValid is false, then that triggers the loop.
+                        input1.charAt(i - 1) == '5' ||
+                        input1.charAt(i - 1) == '6' ||
+                        input1.charAt(i - 1) == '7' ||
+                        input1.charAt(i - 1) == '8' ||
+                        input1.charAt(i - 1) == '9')) {
 
                     // input1 is determined invalid as soon as a character comes up that is not a value 0-9.
                     input1IsValid = false;
@@ -138,16 +138,16 @@ public class Main {
 
             // loops over the length of input2:
             for (int i = 1 ; i < input2.length() ; i++) {
-                if (!(input2.charAt(i - 1) == 0 ||
-                        input2.charAt(i - 1) == 1 ||
-                        input2.charAt(i - 1) == 2 ||
-                        input2.charAt(i - 1) == 3 ||
-                        input2.charAt(i - 1) == 4 ||
-                        input2.charAt(i - 1) == 5 ||
-                        input2.charAt(i - 1) == 6 ||
-                        input2.charAt(i - 1) == 7 ||
-                        input2.charAt(i - 1) == 8 ||
-                        input2.charAt(i - 1) == 9)) {
+                if (!(input2.charAt(i - 1) == '0' ||
+                        input2.charAt(i - 1) == '1' ||
+                        input2.charAt(i - 1) == '2' ||
+                        input2.charAt(i - 1) == '3' ||
+                        input2.charAt(i - 1) == '4' ||
+                        input2.charAt(i - 1) == '5' ||
+                        input2.charAt(i - 1) == '6' ||
+                        input2.charAt(i - 1) == '7' ||
+                        input2.charAt(i - 1) == '8' ||
+                        input2.charAt(i - 1) == '9')) {
 
                     input2IsValid = false;
                     break;
@@ -174,7 +174,7 @@ public class Main {
         // finally compares the integers
         if (num1 == num2) {
             System.out.println("Result: " + num1 + " is equal to " + num2 + ".");
-        } else if (num1 > num2) {
+        } else if (num1 < num2) {
             System.out.println("Result: " + num1 + " is less than " + num2 + ".");
         } else {
             System.out.println("Result: " + num1 + " is greater than " + num2 + ".");
