@@ -70,7 +70,7 @@ public class Main {
 
         // Real code starts here
 
-        String input1 = "4"; // pretend user input // I use some string methods, so the inputs are stored as Strings
+        String input1 = "4"; // I use some string methods, so the inputs are stored as Strings
         String input2 = "4";
 
         boolean input1IsValid;
