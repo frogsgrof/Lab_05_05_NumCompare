@@ -165,6 +165,8 @@ public class Main {
         }  while (!input2IsValid);
         // end input2 loop
 
+
+
         // at this point, both input1 and input2 should be verified integers
 
         // converts the inputs from Strings into integers and stores them in num1 and num2
