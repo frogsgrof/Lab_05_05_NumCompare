@@ -71,7 +71,7 @@ public class Main {
         // Real code starts here
 
         String input1 = "4"; // I use some string methods, so the inputs are stored as Strings
-        String input2 = "4";
+        String input2 = "12";
 
         boolean input1IsValid;
         boolean input2IsValid;
@@ -89,7 +89,6 @@ public class Main {
 
             // start test code:
             System.out.println("[Imagine user input]");
-            input1 = "4"; // pretend user input
             System.out.println("You entered: " + input1);
             // end test code.
 
